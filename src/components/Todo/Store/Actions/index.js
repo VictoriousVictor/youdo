@@ -8,7 +8,8 @@ import {
   ADD,
   FETCH_ADD,
   REMOVE_TODO,
-  REMOVE_ADD
+  REMOVE_ADD,
+  SIGN_OUT_CLEAR
 } from './types'
 
 export const addTodo = (uid, add) => async dispatch => {
@@ -124,5 +125,12 @@ export const removeAdd = (uid, todo, i) => async dispatch => {
     uid: uid,
     todo: todo,
     i: i
+  })
+}
+
+export const signOutClear = () => async dispatch => {
+  dispatch({
+    type: SIGN_OUT_CLEAR,
+    payload: 'Sign Out'
   })
 }

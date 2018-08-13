@@ -31,15 +31,16 @@ class Add extends Component {
   render() {
     return (
       <Aux>
-        <li>Add a todo</li>
-        <li className='Add'>
+        <div className='AddNew'>
           <input 
+            className
+            placeholder='Add a to do'
             onChange={this.onChange}
             value={this.state.add}
             name='add'
             type='text' />
           <i onClick={this.onAddItem} className="material-icons">add_circle</i>
-        </li>
+        </div>
       </Aux>
       
     )

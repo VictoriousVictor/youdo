@@ -60,15 +60,16 @@ class Add extends Component {
   render() {
     return (
       <Aux>
-        <li>Add a todolist</li>
-        <li className='AddNew'>
+        <div className='AddNew'>
           <input 
+            className
             onChange={this.onChange}
             value={this.state.add}
+            placeholder='Create a to do list'
             name='add'
             type='text' />
           <i onClick={this.onAdd} className="material-icons">add_circle</i>
-        </li>
+        </div>
       </Aux>
       
     )

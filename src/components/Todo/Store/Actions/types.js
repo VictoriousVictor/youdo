@@ -7,3 +7,4 @@ export const CLEAR_UID = 'CLEAR_UID';
 export const FETCH_ADD = 'FETCH_ADD';
 export const REMOVE_TODO = 'REMOVE_TODO';
 export const REMOVE_ADD = 'REMOVE_ADD';
+export const SIGN_OUT_CLEAR = 'SIGN_OUT_CLEAR';

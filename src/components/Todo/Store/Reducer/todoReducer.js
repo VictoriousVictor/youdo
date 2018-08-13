@@ -7,7 +7,8 @@ import {
   ADD,
   FETCH_ADD,
   REMOVE_TODO,
-  REMOVE_ADD
+  REMOVE_ADD,
+  SIGN_OUT_CLEAR
  } from '../Actions/types';
 
 const initState = {
@@ -213,8 +214,9 @@ const removeAdd = (state, action) => {
     }
   }
   for (let x = 0; x < todos[nrTodo].list.length; x++) {
-    if(todos[nrTodo].list.key === action.i) {
+    if(todos[nrTodo].list[x].key === action.i) {
       nrAdd = x
+      // todos[nrTodo].list.splice(x, 1)
     }
   }
   todos[nrTodo].list.splice(nrAdd, 1)
@@ -222,6 +224,28 @@ const removeAdd = (state, action) => {
     ...state,
     todos: [ ...state.todos ]
   }
+}
+
+const signOutClear = (state, aciton) => {
+  let updatedState = {
+    uid: null,
+      todos: [
+        // {
+        //   name: null,
+        //   list: [
+        //     {
+        //       name: null,
+        //       key: 'what',
+        //       done: false
+        //     }
+        //   ]
+        // }
+      ],
+      error: null,
+      errorCode: null,
+      payload: null
+  }
+  return { ...updatedState }
 }
 
 
@@ -246,6 +270,8 @@ export default function (state=initState, action) {
       return removeTodo(state, action)
     case REMOVE_ADD:
       return removeAdd(state, action)
+    case SIGN_OUT_CLEAR:
+      return signOutClear(state, action)
     default:
       return state;
   }

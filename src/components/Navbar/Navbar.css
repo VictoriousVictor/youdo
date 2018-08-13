@@ -2,10 +2,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 4rem;
-  border-bottom: 1px solid black;
-  height: 5rem;
-  background-color: rgba(0, 0, 0, .5);
+  height: 10vh;
+  background: rgba(0, 0, 0, 0.3);
+  min-width: 100%;
+}
+
+.Navbar h1 {
+  font-family: Permanent Marker;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 45px;
+  margin-right: 15rem;
 }
 
 .Navbar ul {
@@ -15,4 +23,18 @@
 .Navbar ul li {
   display: flex;
   align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 25px;
+}
+
+.Navbar ul li:not(:last-child) {
+  margin-right: 4rem;
+}
+
+.Navbar ul li i {
+  font-size: 4rem;
+  margin: 0 1rem;
 }

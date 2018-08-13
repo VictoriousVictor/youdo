@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { compose } from 'redux';
 
 import { signup, login, signout, getToken, verifyToken, resetPassword } from '../Store/Actions';
@@ -17,12 +17,14 @@ class Auth extends Component {
 
   componentDidMount() {
     this.props.verifyToken()  
+    console.log(this.props.location.pathname.split('/')[1])
   }
 
   componentDidUpdate = (prevProps, prevState) => {
     if (!this.props.user.token) {
       this.props.getToken();
     } 
+    console.log(this.props.location.pathname.split('/')[1])
   }
   
 
@@ -110,30 +112,25 @@ class Auth extends Component {
   }
 
   authenticate = () => {
-    if(!this.props.user.loggedIn && !this.state.forgotPassword) {
+    if (!this.props.user.loggedIn && !this.state.forgotPassword && this.props.location.pathname.split('/')[1] === 'login') {
       return (
         <Aux>
           {this.onErrorMessage()}
           <div>
-            <label>email:</label>
-            <input value={this.state.email} onChange={this.onChange} name='email' type='email' />
+            <input value={this.state.email} placeholder='Email' onChange={this.onChange} name='email' type='email' />
           </div>
           <div>
-            <label>password:</label>
-            <input value={this.state.password} onChange={this.onChange} name='password' type='password' />
+            <input value={this.state.password} placeholder='Password' onChange={this.onChange} name='password' type='password' />
           </div>
           <ul>
             <button 
+              className='BtnBlue'
               onClick={this.onLogin} 
               onSubmit={this.onSubmit}>
-              Login
-            </button>
-            <button 
-              onClick={this.onSignup} 
-              onSubmit={this.onSubmit}>
-              Signup
+              Log In
             </button>
           </ul>
+          <p className='NoAcc'>You don't have an account yet? <Link to='/signup'>Sign Up</Link></p> 
           <button 
             className='ForgotBtn'
             onClick={this.onForgotPassword}>
@@ -141,12 +138,34 @@ class Auth extends Component {
           </button>
         </Aux>
       )        
+    } else if (!this.props.user.loggedIn && !this.state.forgotPassword && this.props.location.pathname.split('/')[1] === 'signup') {
+      return (
+        <Aux>
+          {this.onErrorMessage()}
+          <div>
+            <input value={this.state.email} placeholder='Email' onChange={this.onChange} name='email' type='email' />
+          </div>
+          <div>
+            <input value={this.state.password} placeholder='Password' onChange={this.onChange} name='password' type='password' />
+          </div>
+          <ul>
+            <button 
+              className='CreateBtn'
+              onClick={this.onSignup} 
+              onSubmit={this.onSubmit}>
+              Create Account
+            </button>
+          </ul>
+          <p className='NoAcc'>You have an account already? <Link to='/login'>Log In</Link></p>
+        </Aux>
+      ) 
     } else if (this.props.user.loggedIn) {
       return (
         <Aux>
-          <p>You are logged in!</p>
+          <p className='NoAcc'>You are logged in!</p>
           <ul>
             <button
+              className='BtnBlue'
               onClick={this.onSignout}
               onSubmit={this.onSubmit}>
               Signout
@@ -158,16 +177,16 @@ class Auth extends Component {
     } else if(this.state.forgotPassword) {
       return (
         <Aux>
-          <label>Email:</label>
           <input 
             name='email'
             value={this.state.email}
+            placeholder='Email'
             type='email'
             onChange={this.onChange}
             />
           <ul>
-            <button onClick={() => this.setState({forgotPassword: false})} >Back</button>
-            <button onClick={this.onForgotPasswordSubmit}>Send</button>
+            <button className='BtnBlue' onClick={() => this.setState({forgotPassword: false})} >Back</button>
+            <button className='BtnBlue' onClick={this.onForgotPasswordSubmit}>Send</button>
           </ul>
         </Aux>
       )   
@@ -178,7 +197,6 @@ class Auth extends Component {
     return (
       <div className='Auth'>
         <form>
-          <i className='material-icons'>account_circle</i>
           {this.authenticate()}
         </form>
       </div>

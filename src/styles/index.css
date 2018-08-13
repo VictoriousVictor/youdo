@@ -8,37 +8,26 @@
 
 html {
   font-size: 62.5%;
-}
-
-html, 
-body {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
+  height: inherit;
   box-sizing: border-box;
   font-family: 'Roboto',
   sans-serif;
   font-size: 1.6rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   color: white;
-
-  background: #093028;
-  /* fallback for old browsers */
-  
-  background: -webkit-linear-gradient(to top left, #237A57, #093028);
-  /* Chrome 10-25, Safari 5.1-6 */
-  
-  background: linear-gradient(to top left, #237A57, #093028);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(180deg, #DE9191 39.7%, #3FA3C3 100%);
+  box-sizing: border-box;
 }
 
-ul,
+/* ul,
 li {
   list-style: none;
-}
+} */
 
 a,
 a::before,

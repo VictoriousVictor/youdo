@@ -35,7 +35,7 @@ class List extends Component {
   listItems = () => {
     if(!this.props.todo.todos || this.props.todo.todos.length <= 0) {
       return (
-        <li>
+        <li className='ListItem'>
           no todo
         </li>
       )
@@ -49,11 +49,11 @@ class List extends Component {
       return (
         itemsArr.map(listItem => {
           return (
-            <li key={listItem}>
+            <li className='ListItem' key={listItem}>
               <Link to={`/${listItem}`}>
                     {listItem}
               </Link>
-              <i onClick={() => this.onRemove(listItem)} className="material-icons">clear</i>
+              <i onClick={() => this.onRemove(listItem)} className="material-icons">remove</i>
             </li>
           )
       })
@@ -64,8 +64,8 @@ class List extends Component {
   render() {
     return (
       <div className='NewList'>
-        <ul> 
           <Add />
+        <ul>
           {this.listItems()}
         </ul>
       </div>

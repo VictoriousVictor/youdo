@@ -5,12 +5,14 @@ import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/Navbar/Navbar';
 
+import '../styles/Layout.css'
+
 class Layout extends Component {
   render() {
     return (
-      <div>
+      <div className='Layout'>
         <Navbar />
-        <main>
+        <main className='Main'>
           {this.props.children}
         </main>
       </div>

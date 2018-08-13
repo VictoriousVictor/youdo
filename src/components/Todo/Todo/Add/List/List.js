@@ -47,7 +47,7 @@ class List extends Component {
 
     if (!this.props.todo.todos || !this.props.todo.todos[nr] || this.props.todo.todos[nr] && this.props.todo.todos[nr].list <= 0) {
       return (
-        <li>Nothing to do</li>
+        <li className='ListItem'>Nothing to do</li>
       )
     } else {
       let arr = [];
@@ -57,7 +57,7 @@ class List extends Component {
       return (
         arr.map(i => {
           return (
-            <li key={i.key}>
+            <li className='ListItem' key={i.key}>
               {i.name}
               <i onClick={() => this.onRemoveAdd(i.key)} className="material-icons">clear</i>
             </li>
@@ -70,9 +70,9 @@ class List extends Component {
   render() {
     return (
       <div className='AddList'>
-        <h3>{this.props.location.pathname.split('/')[1]}</h3>
+        <h2>{this.props.location.pathname.split('/')[1]}</h2>
+        <Add />
         <ul>
-          <Add />
           {this.listItems()}
         </ul>
       </div>

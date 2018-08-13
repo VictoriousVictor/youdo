@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signout, verifyToken } from '../../components/User/Store/Actions';
-import { fetchUid } from '../../components/Todo/Store/Actions';
+import { signOutClear } from '../../components/Todo/Store/Actions';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
@@ -13,7 +13,8 @@ import './Navbar.css'
 class Navbar extends Component {
   onSignout = (e) => {
     e.preventDefault();
-    this.props.signout()
+    this.props.signout();
+    this.props.signOutClear();
     this.props.history.push('/')
     this.props.verifyToken();
   }
@@ -23,21 +24,24 @@ class Navbar extends Component {
       return (
         <Aux>
           <li>
+            <i class="material-icons">sentiment_very_satisfied</i>
             <NavLink to='/profile'>Profile</NavLink>
-            <i className='material-icons'>account_circle</i>
           </li>
           <li onClick={this.onSignout}>
-            <p>Signout</p>
-            <i className="material-icons">cancel</i>
+            <i className="material-icons">close</i>
           </li>
         </Aux>  
       )  
     } else {
       return (
-        <li>
-          <NavLink to='/auth'>Login</NavLink>
-          <i className='material-icons'>account_circle</i>
-        </li>
+        <Aux>
+          <li>
+            <NavLink to='/login'>Log In</NavLink>
+          </li>
+          <li>
+            <NavLink to='/signup'>Sign In</NavLink>
+          </li>
+        </Aux>  
       )
     }
   }
@@ -62,5 +66,5 @@ const mapStateToProps = state => {
 
 export default compose(
   withRouter,
-  connect(mapStateToProps, { signout, verifyToken })
+  connect(mapStateToProps, { signout, verifyToken, signOutClear })
 )(Navbar);

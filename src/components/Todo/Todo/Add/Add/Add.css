@@ -1,9 +1,0 @@
-.Add {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.Add input {
-  width: 20rem;
-}

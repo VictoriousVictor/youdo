@@ -10,3 +10,11 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.AddList h2 {
+  font-family: Permanent Marker;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 100px;
+}
