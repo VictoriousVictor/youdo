@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, 
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto',
+  sans-serif;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: white;
+
+  background: #093028;
+  /* fallback for old browsers */
+  
+  background: -webkit-linear-gradient(to top left, #237A57, #093028);
+  /* Chrome 10-25, Safari 5.1-6 */
+  
+  background: linear-gradient(to top left, #237A57, #093028);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+a::before,
+a::after {
+  color: inherit;
+  text-decoration: none;
+}
+

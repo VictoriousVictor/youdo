@@ -1,0 +1,18 @@
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px solid black;
+  height: 5rem;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.Navbar ul {
+  display: flex;
+}
+
+.Navbar ul li {
+  display: flex;
+  align-items: center;
+}

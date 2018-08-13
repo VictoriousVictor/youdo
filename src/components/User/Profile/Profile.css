@@ -1,0 +1,59 @@
+.Profile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 80%;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.Profile div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Profile p {
+  margin-bottom: 1rem;
+}
+
+.Profile div ul {
+  width: 100%;
+  height: 100%;
+}
+
+.Profile div ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.Profile div div button {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Profile div div button:nth-last-child(1) {
+  background-color: red;  
+}
+
+.Profile div div {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,11 @@
+export const LOGIN = 'LOGIN';
+export const SIGNUP = 'SIGNUP';
+export const SIGNOUT = 'SIGNOUT';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const DELETE_USER = 'DELETE_USER';
+export const GET_TOKEN = 'GET_TOKEN';
+export const VERIFY_TOKEN = 'VERIFY_TOKEN';
+export const CHANGE_EMAIL = 'CHANGE_EMAIL';
+export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
+export const RESET_PASSWORD = 'RESET_PASSWORD';
+export const GET_USER = 'GET_USER';

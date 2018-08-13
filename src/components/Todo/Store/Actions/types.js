@@ -1,0 +1,9 @@
+export const ADD = 'ADD';
+export const ADD_TODO = 'ADD_TODO';
+export const TODO_ERROR = 'TODO_ERROR';
+export const FETCH_TODO = 'FETCH_TODO';
+export const FETCH_UID = 'FETCH_UID';
+export const CLEAR_UID = 'CLEAR_UID';
+export const FETCH_ADD = 'FETCH_ADD';
+export const REMOVE_TODO = 'REMOVE_TODO';
+export const REMOVE_ADD = 'REMOVE_ADD';
