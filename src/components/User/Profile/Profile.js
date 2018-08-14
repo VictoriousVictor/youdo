@@ -88,15 +88,13 @@ class Profile extends Component {
     let editEmail;
       if(this.state.editEmail) {
         editEmail = (
-          <li>
-            <label>
-              New email: 
+          <li> 
               <input 
                 name='newEmail' 
+                placeholder='Enter new mail'
                 type='email' 
                 value={this.state.newEmail}
                 onChange={this.onChange} />
-            </label>
             <i onClick={this.onEditEmailSubmit} className="material-icons">save_alt</i>
           </li>
         )
@@ -105,15 +103,13 @@ class Profile extends Component {
     let editPassword;
       if(this.state.editPassword) {
         editPassword = (
-          <li>
-            <label>
-              New password: 
+          <li> 
               <input 
+                placeholder='Enter new password'
                 name='newPassword'
                 type='password'
                 value={this.state.newPassword}
                 onChange={this.onChange} />
-            </label>
             <i onClick={this.onEditPasswordSubmit} className="material-icons">save_alt</i>
           </li>
         )
@@ -152,13 +148,11 @@ class Profile extends Component {
             {editPassword}
           </ul>
           <div>
-            <button onClick={this.onSignout}>
-              Signout
-              <i className="material-icons">person_pin</i>
+            <button onClick={this.onSignout} className='BtnBlue'>
+              Sign Out
             </button>
-            <button onClick={this.onDelete}>
+            <button onClick={this.onDelete} className='BtnBlue'>
               Delete User 
-              <i className="material-icons">delete</i>
             </button>
           </div>  
         </div>

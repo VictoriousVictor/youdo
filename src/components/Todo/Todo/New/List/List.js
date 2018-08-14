@@ -53,7 +53,7 @@ class List extends Component {
               <Link to={`/${listItem}`}>
                     {listItem}
               </Link>
-              <i onClick={() => this.onRemove(listItem)} className="material-icons">remove</i>
+              <i onClick={() => this.onRemove(listItem)} className="material-icons">remove_circle_outline</i>
             </li>
           )
       })

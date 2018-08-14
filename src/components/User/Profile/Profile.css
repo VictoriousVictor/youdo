@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 60%;
   height: 80%;
   border-radius: 4px;
   display: flex;
@@ -14,13 +14,18 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 80%;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .Profile p {
   margin-bottom: 1rem;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 5rem;
 }
 
 .Profile div ul {
@@ -31,12 +36,13 @@
 .Profile div ul li {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 1rem;
   padding: .5rem;
+  align-items: center;
 }
 
-.Profile div div button {
+/* .Profile div div button {
   font-family: inherit;
   font-size: inherit;
   background-color: white;
@@ -46,7 +52,7 @@
   width: 40%;
   padding: 1rem;
   margin-bottom: 1rem;
-}
+} */
 
 .Profile div div button:nth-last-child(1) {
   background-color: red;  
@@ -55,4 +61,35 @@
 .Profile div div {
   display: flex;
   flex-direction: row;
+}
+
+.Profile ul li label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 5rem;
+}
+
+.Profile ul li input {
+  height: 5.5rem;
+  width: 27rem;
+  border-radius: 10px;
+  color: #02040F;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 25px;
+  outline: none;
+  border: none;
+  padding-left: .5rem;
+}
+
+.Profile ul li input::placeholder {
+  color: #CBCBCB;
+}
+
+.Profile ul li i {
+  font-size: 4rem;
 }

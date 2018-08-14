@@ -59,7 +59,7 @@ class List extends Component {
           return (
             <li className='ListItem' key={i.key}>
               {i.name}
-              <i onClick={() => this.onRemoveAdd(i.key)} className="material-icons">clear</i>
+              <i onClick={() => this.onRemoveAdd(i.key)} className="material-icons">remove_circle_outline</i>
             </li>
           )
         })
