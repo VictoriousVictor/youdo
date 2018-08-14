@@ -17,14 +17,12 @@ class Auth extends Component {
 
   componentDidMount() {
     this.props.verifyToken()  
-    console.log(this.props.location.pathname.split('/')[1])
   }
 
   componentDidUpdate = (prevProps, prevState) => {
     if (!this.props.user.token) {
       this.props.getToken();
     } 
-    console.log(this.props.location.pathname.split('/')[1])
   }
   
 

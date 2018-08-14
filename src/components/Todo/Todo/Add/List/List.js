@@ -27,7 +27,6 @@ class List extends Component {
   onRemoveAdd = (i) => {
     let todo = this.props.location.pathname.split('/')[1]
     let uid = this.props.todo.uid
-    console.log(i)
     this.props.removeAdd(uid, todo, i)
   }
   

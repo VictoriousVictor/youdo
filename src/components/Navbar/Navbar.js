@@ -24,7 +24,7 @@ class Navbar extends Component {
       return (
         <Aux>
           <li>
-            <i class="material-icons">sentiment_very_satisfied</i>
+            <i className="material-icons">sentiment_very_satisfied</i>
             <NavLink to='/profile'>Profile</NavLink>
           </li>
           <li onClick={this.onSignout}>

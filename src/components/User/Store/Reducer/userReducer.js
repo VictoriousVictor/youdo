@@ -7,7 +7,6 @@ import {
   GET_TOKEN,
   VERIFY_TOKEN,
   CHANGE_EMAIL,
-  CHANGE_PASSWORD,
   GET_USER
 } from '../Actions/types';
 

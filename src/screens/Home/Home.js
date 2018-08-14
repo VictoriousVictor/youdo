@@ -7,7 +7,6 @@ import { verifyToken, getToken } from '../../components/User/Store/Actions';
 import { fetchTodo } from '../../components/Todo/Store/Actions'
 import Aux from '../../utils/Aux'
 
-import Add from '../../components/Todo/Todo/New/Add/Add';
 import NewList from '../../components/Todo/Todo/New/List/List';
 import AddList from '../../components/Todo/Todo/Add/List/List';
 

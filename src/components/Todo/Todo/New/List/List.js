@@ -23,7 +23,6 @@ class List extends Component {
       let uid = this.props.todo.uid
       this.props.fetchTodo(uid)
     }
-    console.log(prevProps, this.props)
   }
 
   onRemove = listItem => {
