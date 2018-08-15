@@ -39,7 +39,7 @@ class Navbar extends Component {
             <NavLink to='/login'>Log In</NavLink>
           </li>
           <li>
-            <NavLink to='/signup'>Sign In</NavLink>
+            <NavLink to='/signup'>Sign Up</NavLink>
           </li>
         </Aux>  
       )

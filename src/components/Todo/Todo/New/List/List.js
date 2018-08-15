@@ -27,7 +27,6 @@ class List extends Component {
 
   onRemove = listItem => {
     let uid = this.props.todo.uid
-    console.log(listItem)
     this.props.removeTodo(uid, listItem)
   }
   

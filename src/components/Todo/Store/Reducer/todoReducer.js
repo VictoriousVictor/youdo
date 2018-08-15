@@ -141,7 +141,6 @@ const add = (state, action) => {
       todos[nr].list.forEach(item => {
         loopList.push(item.name)
       })
-      updatedState;
       if(!loopList.includes(action.add)) {
         newAdd = {
           name: action.add,
@@ -164,10 +163,8 @@ const add = (state, action) => {
 
 const fetchAdd = (state, action) => {  
  let newAdd = {};
- let updatedState = [];
  let nr;
  if (action && state.todos.length > 0) {
-   updatedState;
    let todos = state.todos;
    for (let i = 0; i < todos.length; i++) {
      if (todos[i].name === action.todo) {

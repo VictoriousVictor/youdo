@@ -59,7 +59,7 @@ class Home extends Component {
           <h2>Welcome</h2>
           <div>
             <p>Create a to do list</p>
-            <i onClick={this.createNewList} class="material-icons">add_circle_outline</i>
+            <i onClick={this.createNewList} className="material-icons">add_circle_outline</i>
           </div>
         </div>
       )
@@ -74,7 +74,7 @@ class Home extends Component {
           </div>
         </Aux>
       )
-    } else if(this.props.todo.todos.length > 0 && this.state.sidebar === false || this.state.sidebar === true) {
+    } else if(this.props.todo.todos.length > 0) {
       start = (
         <Aux>
           <div className='Sidebar'>

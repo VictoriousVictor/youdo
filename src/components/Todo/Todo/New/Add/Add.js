@@ -62,7 +62,6 @@ class Add extends Component {
       <Aux>
         <div className='AddNew'>
           <input 
-            className
             onChange={this.onChange}
             value={this.state.add}
             placeholder='Create a to do list'

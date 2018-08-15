@@ -36,7 +36,6 @@ class List extends Component {
 
     if(this.props.todo.todos) {
       for (let i = 0; i < this.props.todo.todos.length; i++) {
-        nr;
         if (this.props.todo.todos[i].name === todoName) {
           nr = i;
         }
@@ -44,7 +43,7 @@ class List extends Component {
     }
     
 
-    if (!this.props.todo.todos || !this.props.todo.todos[nr] || this.props.todo.todos[nr] && this.props.todo.todos[nr].list <= 0) {
+    if (!this.props.todo.todos || !this.props.todo.todos[nr] || this.props.todo.todos[nr].list <= 0) {
       return (
         <li className='ListItem'>Nothing to do</li>
       )
