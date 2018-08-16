@@ -161,7 +161,6 @@
 .HomeContentAdd {
   flex: 0 0 70vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 10rem;
 }

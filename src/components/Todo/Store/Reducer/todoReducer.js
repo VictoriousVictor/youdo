@@ -8,7 +8,8 @@ import {
   FETCH_ADD,
   REMOVE_TODO,
   REMOVE_ADD,
-  SIGN_OUT_CLEAR
+  SIGN_OUT_CLEAR,
+  CHECK
  } from '../Actions/types';
 
 const initState = {
@@ -178,9 +179,9 @@ const fetchAdd = (state, action) => {
     })
     for (let x in action.payload) {
       newAdd = {
-        name: action.payload[x],
+        name: action.payload[x].add,
         key: x,
-        done: false
+        done: action.payload[x].done
       }
       if (!arr.includes(newAdd.name)) {
         todos[nr].list.push(newAdd)
@@ -245,6 +246,30 @@ const signOutClear = (state, aciton) => {
   return { ...updatedState }
 }
 
+const check = (state, action) => {
+  let nrTodo;
+  let todos = state.todos
+  for (let y = 0; y < todos.length; y++) {
+    if (todos[y].name === action.todoName) {
+      nrTodo = y;
+    }
+  }
+  for (let x = 0; x < todos[nrTodo].list.length; x++) {
+    if (todos[nrTodo].list[x].key === action.key) {
+      // todos[nrTodo].list.splice(x, 1)
+      if (todos[nrTodo].list[x].done === true) {
+        todos[nrTodo].list[x].done = false
+      } else {
+        todos[nrTodo].list[x].done = true
+      }
+    }
+  }
+  
+  return {
+    ...state,
+    todos: [...state.todos]
+  }
+}
 
 
 export default function (state=initState, action) {
@@ -269,6 +294,8 @@ export default function (state=initState, action) {
       return removeAdd(state, action)
     case SIGN_OUT_CLEAR:
       return signOutClear(state, action)
+    case CHECK:
+      return check(state, action)
     default:
       return state;
   }

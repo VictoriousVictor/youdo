@@ -9,16 +9,37 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
 }
 
 .AddList h2 {
-  font-family: Permanent Marker;
+  font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   line-height: normal;
-  font-size: 100px;
+  font-size: 7rem;
+  color: #88FF11;
+  margin-bottom: 2rem;
+  border-bottom: .5rem solid #88FF11;
+  padding-left: 1rem;
+  text-transform: capitalize;
 }
 
 .AddList {
-  text-align: center;
+  margin-top: 7rem;
+  margin-left: 15rem;
+  width: 70%;
+}
+
+.AddList ul li i {
+  font-size: 3rem;
+}
+
+.AddList ul li div i {
+  padding-right: 1rem;
+}
+
+.AddList ul li div {
+  display: flex;
+  align-items: center;
 }

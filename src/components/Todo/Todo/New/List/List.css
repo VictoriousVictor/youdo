@@ -10,25 +10,46 @@
   margin-top: 2rem;
 }
 
-.ListItem i {
-  font-size: 5rem;
+.ItemHolder i {
+  font-size: 3rem;
   margin-left: 3rem;
 }
 
 .ListItem {
-  display: flex;
+  display: list-item;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
   font-size: 35px;
-  margin: 1rem 0;
+  margin: 2rem 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+  list-style-type: disc;
+  text-transform: capitalize;
+}
+
+.ListItem a {
+  width: auto;
+  display: block;
+}
+
+.ItemHolder {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-left: 4rem;
-  padding-right: 2rem;
+}
+
+.ActiveLink {
+  color: #88FF11;
+}
+
+.LinkItem {
+  width: 80%;
+  display: block;
 }
 
 

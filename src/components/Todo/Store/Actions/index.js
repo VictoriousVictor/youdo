@@ -9,7 +9,8 @@ import {
   FETCH_ADD,
   REMOVE_TODO,
   REMOVE_ADD,
-  SIGN_OUT_CLEAR
+  SIGN_OUT_CLEAR,
+  CHECK
 } from './types'
 
 export const addTodo = (uid, add) => async dispatch => {
@@ -80,7 +81,10 @@ export const todoError = () => dispatch => {
 }
 
 export const add = (uid, todo, add) => dispatch => {
-  let key = firebase.database().ref(`users/${uid}/${todo}`).child('/todos').push(add).key
+  let key = firebase.database().ref(`users/${uid}/${todo}`).child('/todos').push({
+    add: add,
+    done: false
+  }).key
   dispatch({
     type: ADD,
     add,
@@ -132,5 +136,31 @@ export const signOutClear = () => async dispatch => {
   dispatch({
     type: SIGN_OUT_CLEAR,
     payload: 'Sign Out'
+  })
+}
+
+export const check = (key, todoName, uid) => async dispatch => {
+  let obj;
+  firebase.database().ref('users/' + uid + '/' + todoName + '/todos' + '/')
+    .child(key)
+    .once('value',
+      todo => {
+        obj = todo.val()
+      }
+    )
+    if(obj.done === true) {
+      firebase.database().ref('users/' + uid + '/' + todoName + '/todos' + '/').child(key).update({
+        done: false
+      })
+    } else if (obj.done === false) {
+      firebase.database().ref('users/' + uid + '/' + todoName + '/todos' + '/').child(key).update({
+        done: true
+      })
+    }
+
+  dispatch({
+    type: CHECK,
+    key: key,
+    todoName: todoName
   })
 }

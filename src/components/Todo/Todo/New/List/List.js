@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { fetchTodo, todoError, removeTodo } from '../../../Store/Actions';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import Add from '../Add/Add';
 
@@ -47,12 +47,14 @@ class List extends Component {
       return (
         itemsArr.map(listItem => {
           return (
-            <li className='ListItem' key={listItem}>
-              <Link to={`/${listItem}`}>
-                    {listItem}
-              </Link>
-              <i onClick={() => this.onRemove(listItem)} className="material-icons">remove_circle_outline</i>
-            </li>
+            <NavLink className='LinkItem' activeClassName={'ActiveLink'} to={`/${listItem}`}>
+              <div className='ItemHolder' key={listItem}>
+                <li className='ListItem' key={listItem}>
+                        {listItem}
+                </li>
+                <i onClick={() => this.onRemove(listItem)} className="material-icons">remove_circle_outline</i>
+              </div>
+            </NavLink>
           )
       })
     )
