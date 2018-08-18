@@ -36,3 +36,6 @@ a::after {
   text-decoration: none;
 }
 
+i {
+  cursor: pointer;
+}
