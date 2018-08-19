@@ -126,7 +126,7 @@ class Auth extends Component {
           {this.onErrorMessage()}
           <button className='loginBtn loginBtn--facebook' onClick={this.onFacebookLogin}>Log In With Facebook</button>
           <button className='loginBtn loginBtn--google' onClick={this.onGoogleLogin}>Log In With Google</button>
-          <div class="Lines"><p>OR</p></div>
+          <div className="Lines"><p>OR</p></div>
           <div>
             <input value={this.state.email} placeholder='Email' onChange={this.onChange} name='email' type='email' />
           </div>

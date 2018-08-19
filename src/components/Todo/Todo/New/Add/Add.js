@@ -57,6 +57,12 @@ class Add extends Component {
     }) 
   }
 
+  onHandleKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.onAdd(e)
+    }
+  }
+
   render() {
     return (
       <Aux>
@@ -64,6 +70,7 @@ class Add extends Component {
           <input 
             onChange={this.onChange}
             value={this.state.add}
+            onKeyPress={this.onHandleKeyPress}
             placeholder='Create a to do list'
             name='add'
             type='text' />

@@ -28,6 +28,12 @@ class Add extends Component {
     this.setState({ add: '' })
   }
 
+  onHandleKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.onAddItem(e)
+    }
+  }
+
   render() {
     return (
       <Aux>
@@ -35,6 +41,7 @@ class Add extends Component {
           <input 
             className
             placeholder='Add a to do'
+            onKeyPress={this.onHandleKeyPress}
             onChange={this.onChange}
             value={this.state.add}
             name='add'
