@@ -172,3 +172,52 @@ export const getUser = () => async dispatch => {
     })
   } 
 }
+
+export const facebookLogin = () => async dispatch => {
+  let provider = new firebase.auth.FacebookAuthProvider();
+  try {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      let token = result.credential.accessToken;
+      localStorage.setItem('token', token);
+      dispatch({
+        type: LOGIN,
+        payload: result
+      })
+    }).catch(function (error) {
+      dispatch({
+        type: AUTH_ERROR,
+        payload: error
+      })
+    });
+  } catch (error) {
+    dispatch({
+      type: AUTH_ERROR,
+      payload: error
+    })
+  }
+}
+
+export const googleLogin = () => async dispatch => {
+  let provider = new firebase.auth.GoogleAuthProvider();
+  try {
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+      let token = result.credential.accessToken;
+      localStorage.setItem('token', token);
+      dispatch({
+        type: LOGIN,
+        payload: result
+      })
+    }).catch(function (error) {
+      dispatch({
+        type: AUTH_ERROR,
+        payload: error
+      })
+    });
+  } catch (error) {
+    dispatch({
+      type: AUTH_ERROR,
+      payload: error
+    })
+  }
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { compose } from 'redux';
 
-import { signup, login, signout, getToken, verifyToken, resetPassword } from '../Store/Actions';
+import { signup, login, signout, getToken, verifyToken, resetPassword, facebookLogin, googleLogin } from '../Store/Actions';
 import Aux from '../../../utils/Aux';
 
 import './Auth.css'
@@ -109,11 +109,24 @@ class Auth extends Component {
     })
   }
 
+  onFacebookLogin = e => {
+    e.preventDefault();
+    this.props.facebookLogin();
+  }
+
+  onGoogleLogin = e => {
+    e.preventDefault();
+    this.props.googleLogin();
+  }
+
   authenticate = () => {
     if (!this.props.user.loggedIn && !this.state.forgotPassword && this.props.location.pathname.split('/')[1] === 'login') {
       return (
         <Aux>
           {this.onErrorMessage()}
+          <button className='loginBtn loginBtn--facebook' onClick={this.onFacebookLogin}>Log In With Facebook</button>
+          <button className='loginBtn loginBtn--google' onClick={this.onGoogleLogin}>Log In With Google</button>
+          <div class="Lines"><p>OR</p></div>
           <div>
             <input value={this.state.email} placeholder='Email' onChange={this.onChange} name='email' type='email' />
           </div>
@@ -210,5 +223,5 @@ const mapStateToProps = state => {
 
 export default compose(
   withRouter,
-  connect(mapStateToProps, { signup, login, signout, getToken, verifyToken, resetPassword })
+  connect(mapStateToProps, { signup, login, signout, getToken, verifyToken, resetPassword, facebookLogin, googleLogin })
 )(Auth);
